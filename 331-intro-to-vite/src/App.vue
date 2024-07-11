@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="wrapper">
         <nav>
           <RouterLink to="/">Event</RouterLink> |
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/about">Student</RouterLink>
         </nav>
       </div>
     </header>
@@ -35,6 +35,9 @@ nav a {
 }
 nav a.router-link-exact-active {
   color: #42b983;
+}
+h1 {
+  text-align: center;
 }
 
 h2 {
