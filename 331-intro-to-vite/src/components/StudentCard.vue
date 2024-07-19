@@ -31,9 +31,9 @@
   
 <style scoped>
  .event-class{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   }
 .event-card {
   padding: 20px;
