@@ -18,14 +18,16 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div class="event-class">
+  <!-- <div class="event-class"> -->
+    <RouterLink to="/event/5928101">
       <div class="event-card">
         <h2>{{ event.title }}</h2>
         <p class="they-want-it">{{ event.category }}</p>
         <p class="they-want-it">{{ event.organizer }}</p>
         <span>{{  event.time }} on {{ event.date }}</span>
       </div>
-  </div>
+    </RouterLink>
+  <!-- </div> -->
 </template>
 
 <style scoped>
