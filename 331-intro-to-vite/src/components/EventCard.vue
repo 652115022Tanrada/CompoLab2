@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
   import Event from '@/types/Event'
   defineProps<{
     event: Event
@@ -19,12 +18,12 @@ import { ref } from 'vue'
 
 <template>
   <!-- <div class="event-class"> -->
-    <RouterLink to="/event/5928101">
+    <RouterLink :to="{name: 'event-detail-view',params: {id: event.id }}">
       <div class="event-card">
         <h2>{{ event.title }}</h2>
         <p class="they-want-it">{{ event.category }}</p>
         <p class="they-want-it">{{ event.organizer }}</p>
-        <span>{{  event.time }} on {{ event.date }}</span>
+        <span>@{{  event.time }} on {{ event.date }}</span>
       </div>
     </RouterLink>
   <!-- </div> -->
