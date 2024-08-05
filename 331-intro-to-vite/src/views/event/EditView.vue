@@ -3,6 +3,7 @@ import { ref, onMounted, defineProps } from "vue"
 import { type Event } from '@/types'
 import EventService from '@/services/EventService'
 const event = ref<Event | null>(null)
+// const id = ref<number>(5928101)
 const props = defineProps({
     id: {
         type: String,
@@ -24,12 +25,10 @@ onMounted(() => {
     <div v-if="event">
         <h1>{{ event.title }}</h1>
         <nav>
-            <router-link :to="{name: 'event-detail-view', params: { id }}">Details</router-link> |
-            <router-link :to="{name: 'event-register-view', params: { id }}">Register</router-link> |
-            <router-link :to="{name: 'event-edit-view', params: { id }}">Edit</router-link> 
+            <router-link :to="{ name: 'event-detail-view', params: {id}}">Details</router-link> |
+            <router-link :to="{ name: 'event-register-view', params: {id}}">Register</router-link> |
+            <router-link :to="{ name: 'event-edit-view', params: {id}}">Edit</router-link>             
         </nav>
         <p>Edit event here</p>
-        <!-- <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
-        <p>{{ event.description }}</p> -->
     </div>
 </template>
