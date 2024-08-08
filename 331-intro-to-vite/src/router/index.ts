@@ -97,7 +97,10 @@ const router = createRouter({
       component: OrganizerListView
     }
 
-  ]
+  ],
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 router.beforeEach(() => {
   nProgress.start()
