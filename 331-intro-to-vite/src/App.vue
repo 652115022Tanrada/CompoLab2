@@ -9,9 +9,9 @@ const { message } = storeToRefs(store)
 <template>
   <div id="layout">
     <header>
-      <div id="flashMessage" v-if="message">
+      <!-- <div id="flashMessage" v-if="message">
         <h4>{{ message }}</h4>
-      </div>
+      </div> -->
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
       <div class="wrapper">
@@ -51,7 +51,7 @@ h1 {
 h2 {
   font-size: 20px;
 }
-@keyframes yellofade {
+/* @keyframes yellofade {
   from {
     background-color: yellow;
   }
@@ -61,5 +61,5 @@ h2 {
 }
 #flashMessage {
   animation: yellofade 3s ease-in-out;
-}
+} */
 </style>
