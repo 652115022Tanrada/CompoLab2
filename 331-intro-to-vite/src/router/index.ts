@@ -4,6 +4,7 @@ import EventListView from '@/views/EventListView.vue'
 import EventDetailView from '@/views/event/DetailView.vue'
 import EventRegisterView from '@/views/event/RegisterView.vue'
 import EventEditView from '@/views/event/EditView.vue'
+import EventLayoutView from '@/views/event/LayoutView.vue'
 import AboutView from '@/views/AboutView.vue'
 import OrganizerListView from '@/views/OrganizerListView.vue'
 
@@ -19,38 +20,38 @@ const router = createRouter({
     },
     {
       path: '/event/:id',
-      name: 'event-detail-view',
-      component: EventDetailView,
-      props: true
-    },
-    {
-      path: '/event/:id/register',
-      name: 'event-register-view',
-      component: EventRegisterView,
-      props: true
-    },
-    {
-      path: '/event/:id/edit',
-      name: 'event-edit-view',
-      component: EventEditView,
-      props: true
+      name: 'event-layout-view',
+      component: EventLayoutView,
+      props: true,
+      children: [
+        {
+          path: ' ',
+          name: 'event-detail-view',
+          component: EventDetailView,
+          props: true
+        },
+        {
+          path: 'register',
+          name: 'event-register-view',
+          component: EventRegisterView,
+          props: true
+        },
+        {
+          path: 'edit',
+          name: 'event-edit-view',
+          component: EventEditView,
+          props: true
+        }
+      ]
     },
     {
       path: '/about',
       name: 'about',
-       // // route level code-splitting
-      // // this generates a separate chunk (About.[hash].js) for this route
-      // // which is lazy-loaded when the route is visited.
-      // component: () => import('../views/AboutView.vue')
       component: AboutView
     },
     {
       path: '/organizer',
       name: 'organizer',
-       // // route level code-splitting
-      // // this generates a separate chunk (About.[hash].js) for this route
-      // // which is lazy-loaded when the route is visited.
-      // component: () => import('../views/AboutView.vue')
       component: OrganizerListView
     }
 
