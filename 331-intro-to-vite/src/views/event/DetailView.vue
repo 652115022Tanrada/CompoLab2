@@ -6,6 +6,7 @@ import { type Event } from '@/types'
 // const id = ref<number>(5928101)
 const props = defineProps<{
     event: Event
+    id: String
 }>()
 const {event} = toRefs(props)
 </script>
