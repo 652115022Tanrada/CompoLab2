@@ -3,6 +3,7 @@ import EventCard from '@/components/EventCard.vue'
 import { type Event } from '@/types'
 import { ref, onMounted, computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
+
 import EventService from '@/services/EventService'
 
 const route = useRoute()
@@ -24,7 +25,7 @@ onMounted(() => {
       totalEvents.value = parseInt(response.headers['x-total-count'])
     })
     .catch((error) => {
-      console.error('There was an error!', error)
+        console.error('There was an error!', error)
     })
   })
 })
