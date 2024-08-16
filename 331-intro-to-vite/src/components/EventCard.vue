@@ -22,7 +22,8 @@
     <RouterLink class="event-link" :to="{ name: 'event-detail-view',params: {
       id: event.id }}">
       <div class="cursor-pointer border border-gray-600 p-[20px] w-[250px] mb-[18px] hover:scale-101 hover:shadow-sp">
-        <h2>{{ event.title }}</h2>
+        <!-- <h2>{{ event.title }}</h2> -->
+        <h2 class="text-xl">{{ event.title }}</h2>
         <p class="they-want-it">{{ event.category }}</p>
         <p class="they-want-it">{{ event.organizer }}</p>
         <span>@{{  event.time }} on {{ event.date }}</span>
@@ -31,7 +32,7 @@
   <!-- </div> -->
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .event-class{
     display: flex;
     flex-direction: column;
@@ -57,6 +58,6 @@
     font-size: 0.87em;
     text-align: right;
   }
-</style>
+</style> -->
 
 

@@ -9,12 +9,16 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <div class="text-center font-sans text-gray-700 antialias">
     <header>
-      <!-- <div id="flashMessage" v-if="message">
+      <div id="flashMessage" class="animate-fade" v-if="message">
         <h4>{{ message }}</h4>
-      </div> -->
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+      </div>
+      <div class="flex flex-col justify-center items-center mt-5">
+        <img  alt="Vue logo" src="@/assets/logo.svg" width="125" height="125" />
+      </div>
+      
 
       <div class="wrapper">
+        
         <!-- <nav>
           <RouterLink :to="{ name: 'event-list-view', query: { perPage: 2, page: 1 } }">Event</RouterLink> |
           <RouterLink :to="{ name: 'organizer' }">Oraganizer</RouterLink> |
@@ -31,7 +35,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style>
 
-nav {
+/* nav {
 padding: 30px;
 }
 nav a {
@@ -47,7 +51,7 @@ h1 {
 
 h2 {
   font-size: 20px;
-}
+} */
 /* @keyframes yellofade {
   from {
     background-color: yellow;
