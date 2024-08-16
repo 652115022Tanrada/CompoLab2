@@ -15,10 +15,13 @@ import { RouterLink, RouterView } from 'vue-router'
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
       <div class="wrapper">
-        <nav>
+        <!-- <nav>
           <RouterLink :to="{ name: 'event-list-view', query: { perPage: 2, page: 1 } }">Event</RouterLink> |
           <RouterLink :to="{ name: 'organizer' }">Oraganizer</RouterLink> |
-          <RouterLink :to="{ name: 'about' }">Student</RouterLink> 
+          <RouterLink :to="{ name: 'about' }">Student</RouterLink>  -->
+          <nav class="py-6">
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'event-list-view', query: { perPage: 2, page: 1 } }">Event</RouterLink> |
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'about' }">About</RouterLink>
         </nav>
       </div>
     </header>
