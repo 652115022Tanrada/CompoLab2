@@ -6,6 +6,10 @@ import EventRegisterView from '@/views/event/RegisterView.vue'
 import EventEditView from '@/views/event/EditView.vue'
 import AboutView from '@/views/AboutView.vue'
 import OrganizerListView from '@/views/OrganizerListView.vue'
+// import nProgress from 'nprogress'
+import EventService from '@/services/EventService'
+// import { useEventStore } from '@/stores/event'
+import AddEventView from '@/views/EventFormView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +47,11 @@ const router = createRouter({
       // // which is lazy-loaded when the route is visited.
       // component: () => import('../views/AboutView.vue')
       component: AboutView
+    },
+    {
+      path: '/add-event/',
+      name: 'add-event',
+      component: AddEventView
     },
     {
       path: '/organizer',
