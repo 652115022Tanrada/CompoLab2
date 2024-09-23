@@ -1,5 +1,6 @@
 import axios from 'axios'
-import type { Event } from '@/types'
+import type { Event, Organizer } from '@/types'
+
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
@@ -19,5 +20,8 @@ export default {
   },
   saveEvent(event: Event) {
     return apiClient.post('/events', event)
+  },
+  saveOrganizer(organizer: Organizer) {
+    return apiClient.post('/organizers', organizer)
   }
 }

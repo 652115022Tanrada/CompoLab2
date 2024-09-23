@@ -138,7 +138,7 @@ h2 {
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #4a90e2;
+  border: solid 2px #4caf50;
 }
 
 .form-group textarea {
@@ -154,7 +154,7 @@ h2 {
 }
 
 .submit-btn {
-  background-color: #4a90e2;
+  background-color: #4caf50;
   color: #fff;
   padding: 12px;
   border: none;
@@ -165,7 +165,7 @@ h2 {
 }
 
 .submit-btn:hover {
-  background-color: #357ab8;
+  background-color: #4caf50;
 }
 
 .pre-container {
