@@ -11,15 +11,13 @@ const { message } = storeToRefs(store)
 
 const organizer = ref<Organizer>({
   id: 0,
-  organizationName: '',
-  address: ''
+  name: ''
 })
 
 function resetForm() {
   organizer.value = {
     id: 0,
-    organizationName: '',
-    address: ''
+    name: ''
   }
 }
 
@@ -52,17 +50,13 @@ function saveOrganizer() {
         <div class="form-group">
           <label for="organization-name">Organization Name</label>
           <input
-            v-model="organizer.organizationName"
+            v-model="organizer.name"
             id="organization-name"
             type="text"
             placeholder="Organization Name"
           />
         </div>
 
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input v-model="organizer.address" id="address" type="text" placeholder="Address" />
-        </div>
         <button class="submit-btn" type="submit">Submit</button>
       </form>
       </div>
