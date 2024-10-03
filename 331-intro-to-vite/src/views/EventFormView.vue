@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import EventService from '@/services/EventService'
 import { useRouter } from 'vue-router'
 import { useMessageStore } from '@/stores/message'
+import BaseInput from '@/components/BaseInput.vue'
 
 const event = ref<Event>({
   id: 0,
@@ -43,32 +44,24 @@ function saveEvent() {
       <h1>Create an event</h1>
       <form class="event-form" @submit.prevent="saveEvent">
         <div class="form-group">
-          <label for="category">Category</label>
-          <input v-model="event.category" id="category" type="text" placeholder="Category" />
+          <BaseInput v-model="event.category" id="category" type="text" label="Category"/>
         </div>
 
         <div class="form-section">
           <h3>Name & describe your event</h3>
           <div class="form-group">
-            <label for="title">Title</label>
-            <input v-model="event.title" id="title" type="text" placeholder="Title" />
+            <BaseInput v-model="event.title" id="title" type="text" label="Title" />
           </div>
 
           <div class="form-group">
-            <label for="description">Description</label>
-            <textarea
-              v-model="event.description"
-              id="description"
-              placeholder="Description"
-            ></textarea>
+            <BaseInput v-model="event.description" id="description" type="text" label="Description" /> 
           </div>
         </div>
 
         <div class="form-section">
           <h3>Where is your event?</h3>
           <div class="form-group">
-            <label for="location">Location</label>
-            <input v-model="event.location" id="location" type="text" placeholder="Location" />
+            <BaseInput v-model="event.location" id="location" type="text" label="Location" />
           </div>
         </div>
 
@@ -129,8 +122,7 @@ h2 {
   text-align: left; /* Align label to the left */
 }
 
-.form-group input,
-.form-group textarea {
+/* BaseInput{
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -147,7 +139,7 @@ h2 {
 .form-group textarea {
   resize: vertical;
   height: 100px;
-}
+} */
 
 .form-section h3 {
   font-size: 18px;
