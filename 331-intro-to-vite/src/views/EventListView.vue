@@ -2,7 +2,7 @@
 import EventCard from '@/components/EventCard.vue'
 import { type Event } from '@/types'
 import { ref, onMounted, computed, watchEffect } from 'vue'
-import { useRoute } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 import EventService from '@/services/EventService'
 
 const route = useRoute()
@@ -17,9 +17,9 @@ const hasNexPage = computed(() => {
 
 onMounted(() => {
   watchEffect(() => {
-    events.value = null
     EventService.getEvents(perPage.value, page.value)
     .then((response) => {
+      console.log(response.data)
       events.value = response.data
       totalEvents.value = parseInt(response.headers['x-total-count'])
     })

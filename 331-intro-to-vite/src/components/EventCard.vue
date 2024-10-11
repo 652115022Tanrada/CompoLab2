@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import { type Event } from '@/types'
+import { RouterLink } from 'vue-router';
+
   defineProps<{
     event: Event
   }>()
@@ -20,7 +22,7 @@
   <!-- <div class="event-class"> -->
     <!-- <RouterLink :to="{name: 'event-detail-view',params: {id: event.id }}"> -->
     <RouterLink class="event-link" :to="{ name: 'event-detail-view',params: {
-      id: event.id }}">
+      id: event.id}}">
       <div class="event-card">
         <div class="cursor-pointer border border-gray-600 p-[20px] w-[250px] mb-[18px] hover:scale-101 hover:shadow-sp"></div>
         <h2>{{ event.title }}</h2>
