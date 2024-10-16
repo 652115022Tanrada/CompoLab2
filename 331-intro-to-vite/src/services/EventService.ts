@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { Axios, type AxiosResponse } from 'axios'
 import type { Event, Organizer } from '@/types'
 
 
@@ -15,7 +15,7 @@ export default {
   getEvents(perPage: Number, page: Number) {
     return apiClient.get('/events?_limit=' + perPage + '&_page=' + page)
   },
-  getEvent (id: number) {
+  getEvent(id: number) {
     return apiClient.get('/events/' + id)
   },
   saveEvent(event: Event) {
@@ -23,5 +23,8 @@ export default {
   },
   saveOrganizer(organizer: Organizer) {
     return apiClient.post('/organizers', organizer)
+  },
+  getEventsByKeyword(keyword: string, perPage: number, page: number) : Promise<AxiosResponse<Event[]>> {
+    return apiClient.get<Event[]>('/events?title=' + keyword + '&_limit=' + perPage + '&_page=' + page)
   }
 }
