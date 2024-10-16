@@ -20,14 +20,7 @@ const hasNextPage = computed(() => {
 
 onMounted(() => {
   watchEffect(() => {
-    EventService.getEvents(perPage.value, page.value)
-      .then((response) => {
-        events.value = response.data
-        totalEvents.value = parseInt(response.headers['x-total-count'])
-      })
-      .catch((error) => {
-        console.error('There was an error!', error)
-      })
+    updateKeyword
   })
 })
 
